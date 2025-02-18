@@ -69,7 +69,7 @@ nox.options.default_venv_backend = "uv"
 # * Options ---------------------------------------------------------------------------
 
 # if True, use uv lock/sync.  If False, use uv pip compile/sync...
-UV_LOCK = False
+UV_LOCK = True
 
 PYTHON_ALL_VERSIONS = [
     c.split()[-1]
