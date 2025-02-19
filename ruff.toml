@@ -76,10 +76,14 @@ pylint.max-public-methods = 30
 # extend-per-file-ignores."path/to/file.py" = [ ... ]
 [lint.extend-per-file-ignores]
 "**/*.ipynb" = [
+    "ANN",
+    "D",
+
     # "B018",  # - Don't remove useless expressions in notebooks
     # "D100",  # - undocumented-public-module
     # "INP001",
 ]
+"examples/data/*.py" = [ "INP001" ]
 "src/**/*.py" = [
     # "ANN",     # - Annotations (just use mypy/pyright)
     # "D102",    # - Missing docstring in public method

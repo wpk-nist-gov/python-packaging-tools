@@ -19,6 +19,7 @@ dependencies:
   - nox>=2024.4.15
   - packaging
   - pandas
+  - pandas-stubs
   - pylint
   - pytest
   - pytest-cov

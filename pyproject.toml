@@ -94,6 +94,7 @@ test-notebook = [
     { include-group = "test-extras" },
 ]
 typing = [
+    "pandas-stubs",
     "pylint",
     "pytest",
     { include-group = "uvxrun" },
@@ -101,6 +102,11 @@ typing = [
 # Anything needed to run tools/uvxrun.py
 # NOTE: uvxrun-tools defined explicitly in tool.pyproject2conda.envs.uvxrun-tools
 uvxrun = [ "packaging" ]
+example = [
+    "analphipy",
+    "ipykernel",
+    "pandas",
+]
 
 [tool.hatch.version]
 source = "vcs"
@@ -170,6 +176,7 @@ source = [
 files = [
     "src",
     "tests",
+    "examples/data",
 ]
 show_error_codes = true
 warn_unused_ignores = true
@@ -198,6 +205,7 @@ strict = true
 include = [
     "src",
     "tests",
+    "examples/data",
 ]
 exclude = [
     "**/__pycache__",
@@ -212,6 +220,7 @@ strict = [
     "tests",
     "noxfile.py",
     "tools/*.py",
+    "examples/data",
 ]
 pythonVersion = "3.11"
 typeCheckingMode = "strict"
@@ -283,14 +292,15 @@ groups = "mypy"
 skip_package = true
 style = "requirements"
 
-[tool.pyproject2conda.envs.conda-env]
-deps = [
-    "analphipy",
-    "pandas",
-]
+[tool.pyproject2conda.envs.example-env]
+template_python = "example-conda-env/py{py}-{env}"
+template = "example-virtual-env/{env}"
+name = "python-packaging-tools-example-env"
+groups = "example"
 skip_package = true
 python = "default"
 header = false
+style = [ "requirements", "yaml" ]
 
 # * uv -------------------------------------------------------------------------
 
