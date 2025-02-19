@@ -11,12 +11,14 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
+  - analphipy
   - ipykernel
   - ipython
   - mypy>=1.14.0
   - nbclient>=0.10.0
   - nox>=2024.4.15
   - packaging
+  - pandas
   - pylint
   - pytest
   - pytest-cov

@@ -438,8 +438,10 @@ def dev(
         "ipykernel",
         "install",
         "--user",
-        "--name=python-packaging-tools-dev",
-        "--display-name='Python [venv: python-packaging-tools-dev]'",
+        "--name",
+        "python-packaging-tools-dev",
+        "--display-name",
+        "Python [venv: python-packaging-tools-dev]",
     )
 
 

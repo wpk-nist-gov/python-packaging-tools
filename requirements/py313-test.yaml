@@ -11,6 +11,8 @@ channels:
   - conda-forge
 dependencies:
   - python=3.13
+  - analphipy
+  - pandas
   - pytest
   - pytest-cov
   - pytest-sugar

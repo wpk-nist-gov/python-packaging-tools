@@ -38,6 +38,8 @@ dynamic = [
     "version",
 ]
 dependencies = [
+    "analphipy",
+    "pandas",
     "typer",
 ]
 urls.Documentation = "https://pages.nist.gov/python-packaging-tools/"
@@ -280,6 +282,15 @@ reqs = [
 groups = "mypy"
 skip_package = true
 style = "requirements"
+
+[tool.pyproject2conda.envs.conda-env]
+deps = [
+    "analphipy",
+    "pandas",
+]
+skip_package = true
+python = "default"
+header = false
 
 # * uv -------------------------------------------------------------------------
 

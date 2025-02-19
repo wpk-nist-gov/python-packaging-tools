@@ -589,9 +589,9 @@ pip==25.0.1 \
     --hash=sha256:88f96547ea48b940a3a385494e181e29fb8637898f88d88737c5049780f196ea \
     --hash=sha256:c46efd13b6aa8279f33f2864459c8ce587ea6a1a59ee20de055868d8f7688f7f
     # via grayskull
-pkginfo==1.12.1.1 \
-    --hash=sha256:4a09d6ab00af353d24021a42c1b00ac9d0beef0ccc012a5c122430acbeb01c0e \
-    --hash=sha256:57f0b56061c84d5875556fb9437ef80b69863dea56dbad30b0b9a9887652b47c
+pkginfo==1.12.1.2 \
+    --hash=sha256:5cd957824ac36f140260964eba3c6be6442a8359b8c48f4adf90210f33a04b7b \
+    --hash=sha256:c783ac885519cab2c34927ccfa6bf64b5a704d7c69afaea583dd9b7afe969343
     # via conda-lock, grayskull
 platformdirs==4.3.6 \
     --hash=sha256:357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907 \
