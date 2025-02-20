@@ -30,36 +30,9 @@
 
 <!-- other links -->
 
-# `python-packaging-tools`
+# An (opinionated) survey of tools and best practices for packaging python code
 
-A Python package for stuff.
-
-## Overview
-
-Quick overview...
-
-## Features
-
-Some features...
-
-## Status
-
-This package is actively used by the author. Please feel free to create a pull
-request for wanted features and suggestions!
-
-## Quick start
-
-Use one of the following
-
-```bash
-pip install python-packaging-tools
-```
-
-or
-
-```bash
-conda install -c wpk-nist python-packaging-tools
-```
+See [slides.ipynb](slides/slides.ipynb)
 
 ## Example usage
 

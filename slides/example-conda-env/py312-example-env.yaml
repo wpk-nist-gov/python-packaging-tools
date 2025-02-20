@@ -1,4 +1,4 @@
-name: python-packaging-tools-example-env
+name: python-packaging-tools-example-dev
 channels:
   - conda-forge
 dependencies:

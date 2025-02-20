@@ -296,9 +296,9 @@ skip_package = true
 style = "requirements"
 
 [tool.pyproject2conda.envs.example-env]
-template_python = "example-conda-env/py{py}-{env}"
-template = "example-virtual-env/{env}"
-name = "python-packaging-tools-example-env"
+template_python = "slides/example-conda-env/py{py}-{env}"
+template = "slides/example-virtual-env/{env}"
+name = "python-packaging-tools-example-dev"
 groups = "example"
 skip_package = true
 python = "default"
