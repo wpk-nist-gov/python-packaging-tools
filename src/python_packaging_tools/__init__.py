@@ -6,7 +6,7 @@ Top level API (:mod:`python_packaging_tools`)
 from importlib.metadata import PackageNotFoundError
 from importlib.metadata import version as _version
 
-from .core import example_function
+from .core import calculate_effective_density
 
 try:
     __version__ = _version("python-packaging-tools")
@@ -20,5 +20,5 @@ __email__ = "wpk@nist.gov"
 
 __all__ = [
     "__version__",
-    "example_function",
+    "calculate_effective_density",
 ]

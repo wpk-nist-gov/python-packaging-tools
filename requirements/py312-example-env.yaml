@@ -1,9 +1,0 @@
-name: python-packaging-tools-example-env
-channels:
-  - conda-forge
-dependencies:
-  - python=3.12
-  - analphipy
-  - ipykernel
-  - pandas
-  - pip

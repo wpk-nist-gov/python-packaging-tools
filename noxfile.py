@@ -402,6 +402,7 @@ def test_all(session: Session) -> None:
     """Run all tests and coverage."""
     for py in PYTHON_ALL_VERSIONS:
         session.notify(f"test-{py}")
+    session.notify("test-notebook")
     session.notify("coverage")
 
 

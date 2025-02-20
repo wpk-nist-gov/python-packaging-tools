@@ -63,7 +63,7 @@ extensions = [
     # - myst stuff
     "myst_nb",
     # "myst_parser",
-    "sphinx_click",
+    "sphinxarg.ext",
 ]
 
 autosectionlabel_prefix_document = True

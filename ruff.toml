@@ -83,6 +83,7 @@ pylint.max-public-methods = 30
     # "D100",  # - undocumented-public-module
     # "INP001",
 ]
+"tests/**/*.py" = [ "ANN" ]
 "examples/data/*.py" = [ "INP001" ]
 "src/**/*.py" = [
     # "ANN",     # - Annotations (just use mypy/pyright)

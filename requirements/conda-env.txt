@@ -1,3 +1,0 @@
-analphipy
-ipykernel
-pandas

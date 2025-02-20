@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
-import pytest
-from click.testing import CliRunner
+from typing import Any
 
-from python_packaging_tools import cli, example_function
+import numpy as np
+import pytest
+
+from python_packaging_tools import calculate_effective_density
 
 
 def test_version() -> None:
@@ -14,23 +16,11 @@ def test_version() -> None:
     assert __version__ != "999"
 
 
-@pytest.fixture
-def response() -> tuple[int, int]:
-    return 1, 2
-
-
-def test_example_function(response: tuple[int, int]) -> None:
-    expected = 3
-    assert example_function(*response) == expected
-
-
-def test_command_line_interface() -> None:
-    """Test the CLI."""
-    runner = CliRunner()
-    result = runner.invoke(cli.main)
-    assert result.exit_code == 0
-    assert "python_packaging_tools.cli.main" in result.output
-    help_result = runner.invoke(cli.main, ["--help"])
-    assert help_result.exit_code == 0
-    assert "--help" in help_result.output
-    assert "Show this message and exit." in help_result.output
+@pytest.mark.parametrize(
+    ("args", "expected"),
+    [
+        ((12, 6, 1.0, 0.5), 0.5237753242357204),
+    ],
+)
+def test_calculate(args: tuple[Any, ...], expected: float) -> None:
+    np.testing.assert_allclose(calculate_effective_density(*args), expected)

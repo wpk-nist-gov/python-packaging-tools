@@ -6,12 +6,11 @@
 .. autosummary::
    :toctree: generated/
 
-   example_function
-```
+    calculate_effective_density
 
-```{eval-rst}
-
-.. click:: python_packaging_tools.cli:main
-    :prog: python_packaging_tools
-    :nested: full
+.. argparse::
+   :module: python_packaging_tools.cli
+   :func: get_parser
+   :prog: mie-effective-density
+   :nodefault:
 ```
