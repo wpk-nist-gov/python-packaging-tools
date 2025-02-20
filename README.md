@@ -32,6 +32,8 @@
 
 # An (opinionated) survey of tools and best practices for packaging python code
 
+<!-- end-docs -->
+
 See [slides.ipynb](slides/slides.ipynb)
 
 ## Example usage
@@ -39,8 +41,6 @@ See [slides.ipynb](slides/slides.ipynb)
 ```python
 import python_packaging_tools
 ```
-
-<!-- end-docs -->
 
 ## Documentation
 

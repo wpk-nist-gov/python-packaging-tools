@@ -7,7 +7,7 @@ from typing import Any
 import numpy as np
 import pytest
 
-from python_packaging_tools import calculate_effective_density
+from python_packaging_tools import calculate_virial
 
 
 def test_version() -> None:
@@ -19,8 +19,8 @@ def test_version() -> None:
 @pytest.mark.parametrize(
     ("args", "expected"),
     [
-        ((12, 6, 1.0, 0.5), 0.5237753242357204),
+        ((1.0, -1.0, 1.5, 1.0), -6.4526623819894455),
     ],
 )
 def test_calculate(args: tuple[Any, ...], expected: float) -> None:
-    np.testing.assert_allclose(calculate_effective_density(*args), expected)
+    np.testing.assert_allclose(calculate_virial(*args), expected)
