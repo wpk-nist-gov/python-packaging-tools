@@ -37,13 +37,12 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "analphipy",
     "pandas",
     "tqdm",
 ]
 urls.Documentation = "https://pages.nist.gov/python-packaging-tools/"
 urls.Homepage = "https://github.com/wpk-nist-gov/python-packaging-tools"
-scripts.mie-effective-density = "python_packaging_tools.cli:main"
+scripts.sw-second-virial = "python_packaging_tools.cli:main"
 
 [dependency-groups]
 dev = [
@@ -104,7 +103,6 @@ typing = [
 # NOTE: uvxrun-tools defined explicitly in tool.pyproject2conda.envs.uvxrun-tools
 uvxrun = [ "packaging" ]
 example = [
-    "analphipy",
     "ipykernel",
     "pandas",
 ]

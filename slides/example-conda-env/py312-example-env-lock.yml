@@ -13,7 +13,7 @@
 version: 1
 metadata:
   content_hash:
-    osx-64: 7b0fda5aca4916f0316f64064b90fb0d6dc79567c6bb0d0f60a185a6368dae0f
+    osx-64: 2f6e8675875d11985302a7effa1d32c9eb49d74dc82cb8b14b4cc83ad83b8671
   channels:
     - url: conda-forge
       used_env_vars: []
@@ -22,24 +22,6 @@ metadata:
   sources:
     - py312-example-env.yaml
 package:
-  - name: analphipy
-    version: 0.4.1
-    manager: conda
-    platform: osx-64
-    dependencies:
-      attrs: ""
-      docstring-inheritance: ""
-      module-utilities: ">=0.10.1"
-      numpy: ""
-      python: ">=3.8"
-      scipy: ""
-      typing_extensions: ""
-    url: https://conda.anaconda.org/conda-forge/noarch/analphipy-0.4.1-pyhd8ed1ab_0.conda
-    hash:
-      md5: 983846b59ffd7c95a854d8bd712f8f83
-      sha256: 01779880e5318b5d5238bdb80e44c408ca057b44c0e22e23fca1a41c64fecc18
-    category: main
-    optional: false
   - name: appnope
     version: 0.1.4
     manager: conda
@@ -62,18 +44,6 @@ package:
     hash:
       md5: 8f587de4bcf981e26228f268df374a9b
       sha256: 93b14414b3b3ed91e286e1cbe4e7a60c4e1b1c730b0814d1e452a8ac4b9af593
-    category: main
-    optional: false
-  - name: attrs
-    version: 25.1.0
-    manager: conda
-    platform: osx-64
-    dependencies:
-      python: ">=3.9"
-    url: https://conda.anaconda.org/conda-forge/noarch/attrs-25.1.0-pyh71513ae_0.conda
-    hash:
-      md5: 2cc3f588512f04f3a0c64b4e9bedc02d
-      sha256: 1f267886522dfb9ae4e5ebbc3135b5eb13cff27bdbfe8d881a4d893459166ab4
     category: main
     optional: false
   - name: bzip2
@@ -137,18 +107,6 @@ package:
     hash:
       md5: d622d8d7ee8868870f9cbe259f381181
       sha256: 84e5120c97502a3785e8c3241c3bf51f64b4d445f13b4d2445db00d9816fe479
-    category: main
-    optional: false
-  - name: docstring-inheritance
-    version: 2.2.1
-    manager: conda
-    platform: osx-64
-    dependencies:
-      python: ">=3.9,<3.13"
-    url: https://conda.anaconda.org/conda-forge/noarch/docstring-inheritance-2.2.1-pyhd8ed1ab_1.conda
-    hash:
-      md5: a3dfe44915cf0098d441acf85bd981f6
-      sha256: 562be30d214571dc28d8719109e53472cf87bf53df9546e69bf5fb7596db29c7
     category: main
     optional: false
   - name: exceptiongroup
@@ -497,19 +455,6 @@ package:
       sha256: 69b7dc7131703d3d60da9b0faa6dd8acbf6f6c396224cf6aef3e855b8c0c41c6
     category: main
     optional: false
-  - name: module-utilities
-    version: 0.10.1
-    manager: conda
-    platform: osx-64
-    dependencies:
-      python: ">=3.8"
-      typing_extensions: ""
-    url: https://conda.anaconda.org/conda-forge/noarch/module-utilities-0.10.1-pyhd8ed1ab_0.conda
-    hash:
-      md5: 932494cc3705ab1df83f60ee2387a8cc
-      sha256: 7e7bfd46f5ae02a1c4f55b6dad60c730feae629c413e5e52a02cb58147b77d8c
-    category: main
-    optional: false
   - name: ncurses
     version: "6.5"
     manager: conda
@@ -820,27 +765,6 @@ package:
     hash:
       md5: f17f77f2acf4d344734bda76829ce14e
       sha256: 41e7d30a097d9b060037f0c6a2b1d4c4ae7e942c06c943d23f9d481548478568
-    category: main
-    optional: false
-  - name: scipy
-    version: 1.15.2
-    manager: conda
-    platform: osx-64
-    dependencies:
-      __osx: ">=10.13"
-      libblas: ">=3.9.0,<4.0a0"
-      libcblas: ">=3.9.0,<4.0a0"
-      libcxx: ">=18"
-      libgfortran: 5.*
-      libgfortran5: ">=13.2.0"
-      liblapack: ">=3.9.0,<4.0a0"
-      numpy: ">=1.23.5"
-      python: ">=3.12,<3.13.0a0"
-      python_abi: 3.12.*
-    url: https://conda.anaconda.org/conda-forge/osx-64/scipy-1.15.2-py312hd04560d_0.conda
-    hash:
-      md5: cea880e674e00193c7fb915eea6c8200
-      sha256: 4c34ef6a688c3ea99a11a9c32941133800f4e10ff5af0074998abed80392c75a
     category: main
     optional: false
   - name: setuptools

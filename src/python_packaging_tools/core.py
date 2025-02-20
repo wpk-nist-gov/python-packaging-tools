@@ -5,46 +5,35 @@ Core functionality (:mod:`~python_packaging_tools.core`)
 
 from __future__ import annotations
 
-from typing import cast
-
-import analphipy
+import numpy as np
 
 
-def calculate_effective_density(
-    n: int,
-    m: int,
-    temp: float,
-    dens: float,
-    sig: float = 1.0,
-    eps: float = 1.0,
-) -> float:
+def calculate_virial(sig: float, eps: float, lam: float, temp: float) -> float:
     """
-    Calculate effective density using Noro-Frenkel analysis of Mie potential
+    Calculate second virial of square well fluid.
 
     Parameters
     ----------
-    n, m : int
-        Mie potential parameters.
+    sig : float
+        Size parameter.
+    eps : float
+        Depth of energy well (negative for attractive).
+    lam : float
+        Attrictive well size (lam * sig is well distance from sig)
     temp : float
-        Temperature.
-    dens : float
-        Density.
-    sig, eps : float
-        Mie potential parameters.
+        Reduced temperature.
 
     Returns
     -------
     float
-        Effective density.
+        Second virial coefficient.
 
     Examples
     --------
-    >>> calculate_effective_density(12, 6, 1.0, 0.5)
-    0.52377532...
+    >>> calculate_virial(sig=1.0, eps=-1.0, lam=1.5, temp=1.0)
+    -6.4526623819...
     """
-    p = analphipy.potential.LennardJonesNM(n=n, m=m, sig=sig, eps=eps)
-    nf = p.to_nf()
-
-    sig = cast("float", nf.sig(beta=1 / temp))
-
-    return dens * sig**3
+    out: float = float(
+        2 * np.pi / 3.0 * sig**3 * (1.0 + (1 - np.exp(-eps / temp)) * (lam**3 - 1.0))
+    )
+    return out

@@ -17,14 +17,13 @@ def main() -> None:
     """Get data and write"""
     out = [
         {
-            "n": 2 * m,
-            "m": m,
+            "sig": 1.0,
+            "eps": -1.0,
+            "lam": lam,
             "temp": temp,
-            "dens": float(dens),
         }
-        for m in range(2, 10)
-        for temp in [0.5, 1.0, 1.5, 2.0, 3.0]
-        for dens in [0.1, 0.2, 0.5, 0.8]
+        for lam in [0.1, 0.5, 1.0, 2.0]
+        for temp in [0.5, 1.0, 2.0]
     ]
 
     path = Path(__file__).parent / "params.csv"

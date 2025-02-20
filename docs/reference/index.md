@@ -6,11 +6,11 @@
 .. autosummary::
    :toctree: generated/
 
-    calculate_effective_density
+    calculate_virial
 
 .. argparse::
    :module: python_packaging_tools.cli
    :func: get_parser
-   :prog: mie-effective-density
+   :prog: sw-second-virial
    :nodefault:
 ```

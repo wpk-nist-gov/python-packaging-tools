@@ -85,6 +85,7 @@ pylint.max-public-methods = 30
 ]
 "tests/**/*.py" = [ "ANN" ]
 "examples/data/*.py" = [ "INP001" ]
+"scripts/*.py" = [ "INP001" ]
 "src/**/*.py" = [
     # "ANN",     # - Annotations (just use mypy/pyright)
     # "D102",    # - Missing docstring in public method
