@@ -1,28 +1,32 @@
-"""
-Console script (:mod:`~python_packaging_tools.cli`)
-==========================================================
-"""
+"""Script to calculate effective density"""
 
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+import numpy as np
 import pandas as pd
 from tqdm import tqdm
-
-from .core import calculate_virial
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
 
-def get_parser() -> argparse.ArgumentParser:
+def _calculate_virial(sig: float, eps: float, lam: float, temp: float) -> float:
+    out: float = (
+        2 * np.pi / 3.0 * sig**3 * (1.0 + (1 - np.exp(-eps / temp)) * (lam**3 - 1.0))
+    )
+    return out
+
+
+def _get_parser() -> argparse.ArgumentParser:
     """Get parser"""
     parser = argparse.ArgumentParser(
-        prog="sw-second-virial",
-        description="Script to calculate second virial coefficient of square well fluid.",
+        prog="calclulate_virial",
+        description="Script to calculate square-well-virial.",
     )
 
     parser.add_argument("filename", type=Path, help="input file")
@@ -35,21 +39,25 @@ def get_parser() -> argparse.ArgumentParser:
 
 def main(args: Sequence[str] | None = None) -> int:
     """Main program."""
-    parser = get_parser()
+    parser = _get_parser()
     options = parser.parse_args() if args is None else parser.parse_args(args)
     data: pd.DataFrame = pd.read_csv(options.filename)  # pyright: ignore[reportUnknownMemberType]
 
-    dens_eff: list[float] = []
+    virial: list[float] = []
     for _, g in tqdm(data.iterrows(), total=len(data)):  # pyright: ignore[reportUnknownMemberType, reportUnknownArgumentType, reportUnknownVariableType]
-        dens_eff.append(
-            calculate_virial(sig=g.sig, eps=g.eps, lam=g.lam, temp=g.temp)  # pyright: ignore[reportUnknownMemberType, reportUnknownArgumentType]
+        virial.append(
+            _calculate_virial(sig=g.sig, eps=g.eps, lam=g.lam, temp=g.temp)  # pyright: ignore[reportUnknownMemberType, reportUnknownArgumentType]
         )
 
-    data_eff: pd.DataFrame = data.assign(dens_eff=dens_eff)  # pyright: ignore[reportUnknownMemberType]
+    data_virial: pd.DataFrame = data.assign(virial=virial)  # pyright: ignore[reportUnknownMemberType]
 
     if options.output is None:
-        print(data_eff)  # noqa: T201
+        print(data_virial)  # noqa: T201
     else:
-        data_eff.to_csv(options.output)
+        data_virial.to_csv(options.output)
 
     return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

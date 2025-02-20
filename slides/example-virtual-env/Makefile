@@ -4,7 +4,7 @@ lock-example:
 
 create-example-env:
 	uv venv .venv -p 3.12
-	uv pip install -r requirements.txt
+	uv pip sync -p .venv/bin/python requirements.txt
 
 install-kernel:
 	uv run --python=.venv/bin/python -m ipykernel install --user \
